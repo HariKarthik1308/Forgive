@@ -1,0 +1,26 @@
+﻿.apology-section{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#fff9fb 0%,#fce7f3 30%,#ede9fe 65%,#fdf6ec 100%);padding:80px 20px;overflow:hidden;}
+.apology-section::before{content:"";position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(249,168,212,0.15) 0%,transparent 70%);top:-100px;right:-100px;pointer-events:none;}
+.apology-section::after{content:"";position:absolute;width:400px;height:400px;background:radial-gradient(circle,rgba(196,181,253,0.15) 0%,transparent 70%);bottom:-80px;left:-80px;pointer-events:none;}
+.apology-header{text-align:center;margin-bottom:56px;position:relative;z-index:1;}
+.envelope-wrapper{display:flex;flex-direction:column;align-items:center;gap:40px;position:relative;z-index:1;width:100%;max-width:680px;margin:0 auto;}
+.envelope-container{position:relative;width:320px;height:220px;cursor:pointer;transition:transform 0.3s ease;filter:drop-shadow(0 12px 40px rgba(236,72,153,0.2));}
+.envelope-container:hover{transform:scale(1.03) translateY(-4px);}
+.envelope-body{position:absolute;inset:0;background:linear-gradient(145deg,#fce7f3,#fff0f9);border-radius:8px;border:2px solid rgba(249,168,212,0.5);overflow:hidden;}
+.envelope-bottom{position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(170deg,#fce7f3,#fdf2ff);}
+.envelope-left,.envelope-right{position:absolute;bottom:0;width:0;height:0;border-style:solid;}
+.envelope-left{left:0;border-width:0 0 160px 160px;border-color:transparent transparent rgba(249,168,212,0.25) transparent;}
+.envelope-right{right:0;border-width:0 160px 160px 0;border-color:transparent rgba(249,168,212,0.25) transparent transparent;}
+.envelope-flap{position:absolute;top:0;left:0;right:0;height:110px;overflow:hidden;transform-origin:top center;transition:transform 0.8s cubic-bezier(0.4,0,0.2,1);transform-style:preserve-3d;z-index:10;}
+.envelope-flap.open{transform:rotateX(180deg);}
+.flap-inner{width:100%;height:100%;position:relative;}
+.flap-triangle{position:absolute;top:0;left:0;right:0;height:0;border-left:160px solid transparent;border-right:160px solid transparent;border-top:110px solid #f9a8d4;opacity:0.75;}
+.envelope-seal{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:2rem;z-index:20;transition:transform 0.3s ease;filter:drop-shadow(0 2px 6px rgba(236,72,153,0.4));}
+.envelope-container:hover .envelope-seal{transform:translate(-50%,-50%) scale(1.2);}
+.envelope-hint{position:absolute;bottom:-32px;left:50%;transform:translateX(-50%);font-family:var(--font-script);font-size:0.95rem;color:var(--text-light);white-space:nowrap;opacity:0.75;animation:gentleFloat 2.5s ease-in-out infinite;}
+.letter-card{width:100%;background:white;border-radius:20px;padding:48px;box-shadow:0 24px 80px rgba(236,72,153,0.1),0 8px 32px rgba(196,181,253,0.1),inset 0 1px 0 rgba(255,255,255,0.8);border:1px solid rgba(249,168,212,0.3);animation:fadeUp 0.8s ease both;position:relative;overflow:hidden;}
+.letter-card::before{content:"❤️";position:absolute;top:20px;right:24px;font-size:1.5rem;opacity:0.15;animation:heartBeat 2s ease-in-out infinite;}
+.letter-card::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(transparent,transparent 31px,rgba(249,168,212,0.07) 31px,rgba(249,168,212,0.07) 32px);pointer-events:none;border-radius:inherit;}
+.letter-greeting{font-family:var(--font-script);font-size:1.5rem;color:var(--deep-pink);margin-bottom:24px;font-weight:600;}
+.letter-body{font-family:var(--font-sans);font-size:1.08rem;color:var(--text-dark);line-height:2.0;position:relative;z-index:1;}
+.letter-closing{margin-top:32px;font-family:var(--font-script);font-size:1.3rem;color:var(--text-medium);font-weight:600;}
+@media(max-width:600px){.envelope-container{width:280px;height:190px;}.envelope-left{border-width:0 0 140px 140px;}.envelope-right{border-width:0 140px 140px 0;}.flap-triangle{border-left-width:140px;border-right-width:140px;border-top-width:95px;}.envelope-flap{height:95px;}.letter-card{padding:32px 24px;}.letter-body{font-size:1rem;}}

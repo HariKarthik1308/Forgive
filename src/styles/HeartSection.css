@@ -1,0 +1,24 @@
+﻿.heart-section{position:relative;padding:80px 20px;min-height:70vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#fff9fb 0%,#fce7f3 30%,#e8d5f5 65%,#fdf6ec 100%);overflow:hidden;}
+.burst-container{position:fixed;inset:0;pointer-events:none;z-index:9999;overflow:hidden;}
+.burst-particle{position:absolute;animation:burstParticle ease-out forwards;will-change:transform,opacity;}
+.hug-message-overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;z-index:10000;pointer-events:none;animation:fadeUp 0.5s ease both;}
+.hug-message-box{background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-radius:28px;padding:36px 48px;text-align:center;border:2px solid rgba(249,168,212,0.5);box-shadow:0 24px 80px rgba(236,72,153,0.2),0 8px 32px rgba(196,181,253,0.15);max-width:380px;width:90%;animation:gentleFloat 3s ease-in-out infinite;}
+.hug-message-emoji{font-size:3.5rem;display:block;margin-bottom:16px;animation:heartBeat 1.5s ease-in-out infinite;}
+.hug-message-text{font-family:var(--font-script);font-size:1.5rem;color:var(--text-dark);font-weight:600;line-height:1.4;}
+.heart-section-inner{text-align:center;position:relative;z-index:1;max-width:580px;}
+.glow-heart-wrapper{position:relative;display:inline-block;margin-bottom:36px;}
+.glow-heart{font-size:7rem;display:block;animation:heartBeat 1.8s ease-in-out infinite;filter:drop-shadow(0 0 20px rgba(236,72,153,0.6)) drop-shadow(0 0 40px rgba(236,72,153,0.3)) drop-shadow(0 0 80px rgba(167,139,250,0.2));cursor:pointer;}
+.glow-ring{position:absolute;top:50%;left:50%;border-radius:50%;border:2px solid rgba(249,168,212,0.3);transform:translate(-50%,-50%) scale(0);animation:rippleRing 3s ease-out infinite;pointer-events:none;}
+.glow-ring:nth-child(1){width:120px;height:120px;animation-delay:0s;}
+.glow-ring:nth-child(2){width:160px;height:160px;animation-delay:0.6s;}
+.glow-ring:nth-child(3){width:200px;height:200px;animation-delay:1.2s;}
+@keyframes rippleRing{0%{transform:translate(-50%,-50%) scale(0.5);opacity:0.8;}100%{transform:translate(-50%,-50%) scale(1.8);opacity:0;}}
+.heart-quote{font-family:var(--font-serif);font-size:clamp(1.2rem,3vw,1.65rem);font-style:italic;color:var(--text-dark);line-height:1.6;margin-bottom:44px;position:relative;}
+.heart-quote::before,.heart-quote::after{content:"\201C";font-family:Georgia,serif;font-size:3rem;color:var(--blush-pink);line-height:0;vertical-align:-0.6em;opacity:0.6;}
+.heart-quote::after{content:"\201D";}
+.hug-button{display:inline-flex;align-items:center;gap:10px;padding:18px 44px;font-family:var(--font-serif);font-size:1.15rem;font-weight:600;color:white;background:linear-gradient(135deg,#a78bfa,#ec4899,#a78bfa);background-size:200% auto;border:none;border-radius:50px;cursor:pointer;transition:var(--transition-bounce);box-shadow:0 8px 32px rgba(167,139,250,0.4),0 2px 8px rgba(236,72,153,0.3),inset 0 1px 0 rgba(255,255,255,0.3);letter-spacing:0.3px;position:relative;overflow:hidden;}
+.hug-button::after{content:"";position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.4),transparent);transform:skewX(-20deg);transition:left 0.6s ease;}
+.hug-button:hover::after{left:150%;}
+.hug-button:hover{transform:translateY(-4px) scale(1.05);box-shadow:0 16px 48px rgba(167,139,250,0.5),0 4px 16px rgba(236,72,153,0.4);}
+.hug-button:active{transform:scale(0.97);}
+@media(max-width:480px){.glow-heart{font-size:5rem;}.hug-button{padding:16px 32px;font-size:1rem;}.hug-message-box{padding:28px 24px;}}
